@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday bachha ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ANIMATED BACKGROUND */
+body {
+  min-height: 100vh;
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(-45deg, #ffd6e0, #fff0f5, #ffe6eb, #fff);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* APP CONTAINER */
+.app {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* PAGES */
+.page {
+  display: none;
+  animation: slideUp 0.8s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TEXT */
+h1, h2 {
+  color: #ff4d6d;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* SLIDESHOW */
+.slideshow img {
+  width: 260px;
+  border-radius: 22px;
+  display: none;
+  margin: 25px auto;
+}
+
+/* FLOATING HEART */
+.heart {
+  position: fixed;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  animation: float 5s infinite;
+}
+
+@keyframes float {
+  0% { bottom: -40px; opacity: 0; }
+  50% { opacity: 1; }
+  100% { bottom: 110%; opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="app">
+
+  <!-- PAGE 1 -->
+  <div class="page active">
+    <h1>Happy Birthday bachha 🎂❤️</h1>
+    <p>
+      My bachha…  
+      today is not just your birthday,  
+      it’s the day my favourite person was born.
+    </p>
+    <button onclick="next()">Start 💕</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page">
+    <h2>Vidhi, My Bachha 💖</h2>
+    <p>
+      I still remember the day. I saw you. Golu has introduced us. This is my friend and that day. I was like okay, and you let me when you are going from there. Bye at the big smile and come sitting on a bench playing my Rubik’s cube, you are there hi Suraj kesa hai I was like good. What about you? You are good and that day with smile on my face. I can’t forget that and the main scene golu ki behen ki shadi I totally fell in love with you that day wo din yaad bhi aata hai toh bohot badi smile aati mere face abhi bhi time aagya or phir 17 june 2022 02:00 aapn result release hua or tune pucha bhi tha do you like me ? Same asehi msg aaya tha maiko or main teko chilla chilla ke bolna chahta tha ha bohot pyaar karta tere se or maine bola bhi tha vidhi us din mere pure ghar walo ko lagra tha main pass hone ke khushi main hu per wo kuch lag thi
+    </p>
+    <button onclick="next()">Memories 📸</button>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page">
+    <h2>Our Memories ❤️</h2>
+    <div class="slideshow">
+      <img src="photo1.jpg" class="slide">
+      <img src="photo2.jpg" class="slide">
+      <img src="photo3.jpg" class="slide">
+      <img src="photo4.jpg" class="slide">
+      <img src="photo5.jpg" class="slide">
+    </div>
+    <button onclick="next()">Why I Love You 💌</button>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page">
+    <h2>Why I Love You 💕</h2>
+    <p>Because you are my bachha 🫶</p>
+    <p>Because your smile fixes me</p>
+    <p>Because loving you feels right</p>
+    <p>Because my heart chose you</p>
+    <button onclick="next()">One Last Thing 💝</button>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page">
+    <h2>bachcha… ❤️</h2>
+    <p>
+      Main future ka wada nahi karta sakta vidhi,  
+      par jab tak tum mere saath ho,  
+      main tumhara saath kabhi nahi chhodunga.
+    </p>
+    <p>
+      Happy Birthday meri sabse pyari feeling 🎂  
+      Tum sirf meri girlfriend nahi ho…  
+      tum meri wo feeling ho jo kabhi khatam nahi ho sakti ❤️
+    </p>
+    <h2>Forever Yours 💕</h2>
+  </div>
+
+</div>
+
+<div class="heart">❤️</div>
+
+<script>
+let current = 0;
+const pages = document.querySelectorAll('.page');
+
+function next() {
+  pages[current].classList.remove('active');
+  current++;
+  pages[current].classList.add('active');
+}
+
+/* SLIDESHOW */
+let i = 0;
+const slides = document.getElementsByClassName("slide");
+
+function slideshow() {
+  for (let s of slides) s.style.display = "none";
+  i++;
+  if (i > slides.length) i = 1;
+  slides[i-1].style.display = "block";
+  setTimeout(slideshow, 2200);
+}
+slideshow();
+</script>
+
+</body>
+</html>
